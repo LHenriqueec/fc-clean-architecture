@@ -30,8 +30,7 @@ describe("Test create product use case", () => {
         const usecase = new CreateProductUseCase(repository);
         const input: InputCreateProduct = {
             name: "Product A",
-            price: 7.8,
-            type: "a"
+            price: 7.8
         };
 
         const { id } = await usecase.execute(input);

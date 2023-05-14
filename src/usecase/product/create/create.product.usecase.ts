@@ -9,7 +9,7 @@ export default class CreateProductUseCase {
 
     async execute(input: InputCreateProduct): Promise<OutputCreateProduct> {
         const product: ProductInterface = ProductFactory.create(
-            input.type,
+            'a',
             input.name,
             input.price
         );

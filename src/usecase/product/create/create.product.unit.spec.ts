@@ -3,7 +3,6 @@ import { InputCreateProduct } from "./create.product.dto";
 import CreateProductUseCase from "./create.product.usecase";
 
 const inputA: InputCreateProduct = {
-    type: 'a',
     name: 'Product A',
     price: 1000
 }
