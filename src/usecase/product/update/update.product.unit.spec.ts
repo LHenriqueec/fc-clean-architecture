@@ -4,8 +4,8 @@ import { v4 as uuid } from "uuid";
 
 const input: InputUpdateProduct = {
     id: uuid(),
-    name: 'Product A',
-    price: 7.5
+    name: 'Product Updated',
+    price: 10
 }
 
 const MockRepository = () => {
