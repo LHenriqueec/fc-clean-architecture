@@ -20,15 +20,17 @@ describe("Unit test list products", () => {
         const usecase = new ListProductUseCase(repository);
 
         await usecase.execute({})
-            .then(products => {
+            .then(response => {
                 const output: OutputListProduct = {
-                    id: product.id,
-                    name: product.name,
-                    price: product.price
+                    products: [{
+                        id: product.id,
+                        name: product.name,
+                        price: product.price
+                    }]
                 };
 
-                expect(products).toHaveLength(1)
-                expect(products[0]).toEqual(output);
+                expect(response.products).toHaveLength(1)
+                expect(response).toEqual(output);
             });
     });
 
@@ -39,6 +41,6 @@ describe("Unit test list products", () => {
         repository.findAll.mockReturnValue([]);
         
         await usecase.execute({})
-            .then(products => expect(products).toHaveLength(0));
+            .then(response => expect(response.products).toHaveLength(0));
     });
 });

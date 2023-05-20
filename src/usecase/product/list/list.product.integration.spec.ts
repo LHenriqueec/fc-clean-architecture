@@ -32,7 +32,7 @@ describe("Test list products use case", () => {
 
     it("should response empty list", async () => {
         await usecase.execute({})
-            .then(products => expect(products).toHaveLength(0));
+            .then(response => expect(response.products).toHaveLength(0));
     });
 
     it("should response list products", async () => {
@@ -40,9 +40,9 @@ describe("Test list products use case", () => {
 
         await repository.create(product);
         await usecase.execute({})
-            .then(products => {
-                expect(products).toHaveLength(1);
-                expect(products[0]).toEqual({
+            .then(response => {
+                expect(response.products).toHaveLength(1);
+                expect(response.products[0]).toEqual({
                     id: product.id,
                     name: product.name,
                     price: product.price

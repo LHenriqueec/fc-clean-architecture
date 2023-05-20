@@ -1,8 +1,12 @@
 export interface InputListProduct {
 }
 
-export interface OutputListProduct {
+type Product = {
     id: string,
     name: string,
     price: number
+}
+
+export interface OutputListProduct {
+    products: Product[]
 }
