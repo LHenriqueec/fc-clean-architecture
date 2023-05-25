@@ -18,7 +18,7 @@ class OutputMapper {
                 id,
                 name,
                 price
-            }))
+            })) || []
         }
     }
 }
